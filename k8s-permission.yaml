@@ -1,0 +1,26 @@
+# For development purpose, we give 'cluster-reader' permissions to 'default' namespace
+# see: https://docs.spring.io/spring-cloud-kubernetes/docs/current/reference/html/index.html#service-account
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: default
+  name: namespace-reader
+rules:
+  - apiGroups: ['']
+    resources: ['configmaps', 'pods', 'services', 'endpoints', 'secrets']
+    verbs: ['get', 'list', 'watch']
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: namespace-reader-binding
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: default
+    apiGroup: ''
+roleRef:
+  kind: Role
+  name: namespace-reader
+  apiGroup: ''

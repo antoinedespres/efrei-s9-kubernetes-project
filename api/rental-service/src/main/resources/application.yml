@@ -6,6 +6,10 @@ spring:
     name: rental-service
 
 eureka:
+  # Avoid DNS error with Eureka
+  # see: https://stackoverflow.com/a/65492040
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
-      defaultZone : http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/

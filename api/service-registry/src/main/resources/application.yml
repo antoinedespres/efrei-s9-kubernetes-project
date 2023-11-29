@@ -1,4 +1,8 @@
 eureka:
+  # Avoid DNS error with Eureka
+  # see: https://stackoverflow.com/a/65492040
+  instance:
+    prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
