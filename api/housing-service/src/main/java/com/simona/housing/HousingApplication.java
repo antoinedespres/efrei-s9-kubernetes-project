@@ -12,7 +12,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-@EnableDiscoveryClient
 @OpenAPIDefinition(info =
 @Info(title = "Housing service API", version = "1.0", description = "Documentation Housing service API v1.0"), servers = {
 		@Server(url = "/housing/api/v1", description = "Gateway Server URL")

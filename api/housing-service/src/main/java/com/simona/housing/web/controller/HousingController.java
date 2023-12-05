@@ -33,9 +33,6 @@ public class HousingController {
 
     private final WebClient webClient;
 
-    @Value("${gateway.url}")
-    private String gatewayUrl;
-
     HousingController(HousingRepository housingRepository, RentalClient rentalClient, WebClient webClient) {
         this.housingRepository = housingRepository;
         this.rentalClient = rentalClient;

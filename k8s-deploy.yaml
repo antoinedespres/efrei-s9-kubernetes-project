@@ -1,47 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-registry
-spec:
-  selector:
-    matchLabels:
-      app: service-registry
-  template:
-    metadata:
-      labels:
-        app: service-registry
-    spec:
-      containers:
-        - name: service-registry
-          image: antoinedespres/simona-service-registry
-          ports:
-            - containerPort: 8761
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: gateway
-spec:
-  selector:
-    matchLabels:
-      app: gateway
-  template:
-    metadata:
-      labels:
-        app: gateway
-    spec:
-      containers:
-        - name: gateway
-          image: antoinedespres/simona-gateway
-          ports:
-            - containerPort: 8080
-          env:
-            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-              value: http://service-registry:8761/eureka/
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: auth-service
 spec:
   selector:
@@ -58,8 +17,6 @@ spec:
           ports:
             - containerPort: 8081
           env:
-            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-              value: http://service-registry:8761/eureka/
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://db:5432/simona_account_service
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
@@ -84,8 +41,6 @@ spec:
           ports:
             - containerPort: 8082
           env:
-            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-              value: http://service-registry:8761/eureka/
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://db:5432/simona_housing_service
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
@@ -148,3 +103,18 @@ spec:
               value: postgres
             - name: POSTGRES_PASSWORD
               value: postgres
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: ingress-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - '*'
