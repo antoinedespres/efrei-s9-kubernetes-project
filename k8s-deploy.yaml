@@ -45,10 +45,8 @@ spec:
               value: jdbc:postgresql://db:5432/simona_housing_service
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: none
-            - name: GATEWAY_HOST
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
+            - name: RENTAL_SERVICE_BASE_URL
+              value: rental-service.default.svc.cluster.local:8083
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -75,10 +73,6 @@ spec:
               value: jdbc:postgresql://db:5432/simona_rental_service
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: none
-            - name: GATEWAY_HOST
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
 ---
 apiVersion: apps/v1
 kind: Deployment

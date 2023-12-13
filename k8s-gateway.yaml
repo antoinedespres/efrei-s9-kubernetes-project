@@ -52,7 +52,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /rental/v1/
+            prefix: /rental/
       rewrite:
         uri: /
       route:

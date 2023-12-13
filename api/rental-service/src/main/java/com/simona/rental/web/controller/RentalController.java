@@ -28,7 +28,7 @@ public class RentalController {
     }
 
     @Operation(summary = "Find all rentals")
-    @GetMapping("/rentals")
+    @GetMapping("/v1/rentals")
     public ApiResponse<Page<RentalDto>> findAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size,
                                                @RequestParam(defaultValue = "id") String sortBy) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
@@ -41,7 +41,7 @@ public class RentalController {
     }
 
     @Operation(summary = "Find rentals by housing id")
-    @GetMapping("/rentals/housing/{housingId}")
+    @GetMapping("/v1/rentals/housing/{housingId}")
     public ResponseEntity<ApiResponse<List<RentalDto>>> findByHousingId(@PathVariable Long housingId, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size,
                                                         @RequestParam(defaultValue = "id") String sortBy) {
         if (housingId == null || housingId <= 0)
@@ -61,7 +61,7 @@ public class RentalController {
     }
 
     @Operation(summary = "Find rental by id")
-    @GetMapping("/rentals/{id}")
+    @GetMapping("/v1/rentals/{id}")
     public ResponseEntity<ApiResponse<RentalDto>> findById(@PathVariable Long id) {
         if (id == null || id <= 0)
             return ResponseEntity.badRequest().body(new ApiResponse<>(null, "Id must be positive."));
