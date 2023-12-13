@@ -10,7 +10,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /auth/
+            prefix: /auth/v1/
       rewrite:
         uri: /
       route:
@@ -31,7 +31,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /housing/api/v1/
+            prefix: /housing/v1/
       rewrite:
         uri: /
       route:
@@ -52,7 +52,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /rental/api/v1/
+            prefix: /rental/v1/
       rewrite:
         uri: /
       route:
