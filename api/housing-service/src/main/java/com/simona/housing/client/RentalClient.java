@@ -13,7 +13,7 @@ import java.util.List;
 @FeignClient(name = "rental-service", url = "${rental-service.base-url}")
 public interface RentalClient {
 
-    @GetMapping("/rentals/housing/{housingId}")
+    @GetMapping("/v1/rentals/housing/{housingId}")
     ApiResponse<List<RentalDto>> getRentalsByHousingId(@RequestHeader("Authorization") String authorization, @PathVariable Long housingId, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size,
                                                        @RequestParam(defaultValue = "id") String sortBy);
 }
