@@ -1,6 +1,9 @@
 server:
   port: 8082
 
+rental-service:
+  base-url: localhost:8083
+
 spring:
   application:
     name: housing-service
