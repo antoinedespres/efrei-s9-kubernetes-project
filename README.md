@@ -41,3 +41,7 @@ type `\l` to show the list of created databases.
 ## Resources
 
 (Microservices Security Using JWT - Spring Cloud Gateway - JavaTechie)[https://www.youtube.com/watch?v=MWvnmyLRUik]
+
+## Todo
+
+- Add authentication to housing controller
