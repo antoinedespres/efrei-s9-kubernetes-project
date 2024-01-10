@@ -73,12 +73,12 @@ You can check out the following services in their corresponding URL:
 
 ## Update the docker image
 
-If you made changes to any services. You can build the new Docker image and push it to `antoinedespres/simona-auth-service` Docker registry:
+If you made changes to any services. You can build the new Docker image and push it to `antoinedespres/xxx-service` Docker registry:
 
 ```bash
-docker buildx build --platform linux/amd64 -t antoinedespres/simona-auth-service --push .
-docker buildx build --platform linux/amd64 -t antoinedespres/simona-housing-service --push .
-docker buildx build --platform linux/amd64 -t antoinedespres/simona-rental-service --push .
+docker build -t antoinedespres/simona-auth-service --push .
+docker build -t antoinedespres/simona-housing-service --push .
+docker build -t antoinedespres/simona-rental-service --push .
 ```
 
 ## Clean
@@ -87,7 +87,7 @@ If you need to delete all Kubernetes components, the simplest way is to reset Mi
 
 ```bash
 minikube delete
-minikube start --cpus=2 --memory=5000 --driver=docker
+minikube start --cpus=2 --memory=2000 --driver=docker
 ```
 
 To make sure that Minikube has been reset, you can check if there is any deployments:
