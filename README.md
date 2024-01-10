@@ -65,3 +65,4 @@ type `\l` to show the list of created databases.
 ## Todo
 
 - Add authentication to housing controller
+- Fix docker images using `docker buildx build --platform linux/amd64 -t antoinedespres/simona-xxx-service --push .`
