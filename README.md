@@ -36,6 +36,13 @@ create database simona_rental_service;
 create database simona_account_service;
 ```
 
+## Deployment
+
+```bash
+kubectl apply -f .
+kubectl -n istio-system port-forward deployment/istio-ingressgateway 31380:8080
+```
+
 type `\l` to show the list of created databases.
 
 ## Resources
