@@ -38,9 +38,22 @@ create database simona_account_service;
 
 ## Deployment
 
+Instal Istio. See: https://istio.io/latest/docs/setup/install/istioctl/
+
+Run the following commands:
+
 ```bash
-kubectl apply -f .
-kubectl -n istio-system port-forward deployment/istio-ingressgateway 31380:8080
+# Create pods
+./init.sh
+
+# Run the API
+./run.sh
+```
+
+## Reset
+
+```bash
+minikube delete
 ```
 
 type `\l` to show the list of created databases.
