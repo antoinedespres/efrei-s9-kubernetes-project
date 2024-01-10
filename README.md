@@ -107,4 +107,3 @@ kubectl apply -f samples/addons
 ## Todo
 
 - Add authentication to housing controller
-- Fix docker images using `docker buildx build --platform linux/amd64 -t antoinedespres/simona-xxx-service --push .`
