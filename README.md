@@ -12,7 +12,7 @@ You need to install:
 
 - `Minikube` , a local Kubernetes, focusing on making it easy to learn and develop for Kubernetes. More details at https://minikube.sigs.k8s.io/docs/start/
 
-  Once `Minikube`, Run it using the following command:
+  Once `Minikube` is installed, run it using the following command:
 
   ```bash
   minikube start --cpus=2 --memory=2000 --driver=docker
