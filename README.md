@@ -55,7 +55,7 @@ Run the API:
 ./run.sh
 ```
 
-Run monotoring services
+Run monitoring services
 
 ```
 ./kiali.sh
