@@ -4,63 +4,105 @@
 
 Housing API based on the microservice architecture.
 
+## Requirements
+
+You need to install:
+
+- `Docker`
+
+- `Minikube` , a local Kubernetes, focusing on making it easy to learn and develop for Kubernetes. More details at https://minikube.sigs.k8s.io/docs/start/
+
+  Once `Minikube`, Run it using the following command:
+
+  ```bash
+  minikube start --cpus=2 --memory=2000 --driver=docker
+  ```
+
+- `Istio` to handle ingress gateway. More details at https://istio.io/latest/docs/setup/getting-started/
+
+You also need to install the Istio addons (Kiali, Prometheus, Jaeger, Grafana):
+
+```
+kubectl apply -f samples/addons
+```
+
 ## Getting started
 
-You can generate a new microservice using [this configuration on Spring initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.10&packaging=jar&jvmVersion=11&groupId=com.simonaimmobilier.rental&artifactId=rental-service&name=rental-service&description=Rental%20service&packageName=com.simona.rental&dependencies=web,data-jpa,postgresql)
-
-## Usage
-
-Run all the containers :
+Apply Kubernetes deploys, configmaps, services, etc:
 
 ```bash
-docker-compose up
-```
-
-You can find the Swagger documentation here: http://localhost:8080/swagger-ui.html
-
-You can also view all the microservice instances here: http://localhost:8761
-
-## Local development
-
-Connect to the PostgreSQL interactive terminal `psq` with the built-in user `postgres`:
-
-```bash
-psql -U postgres
-```
-
-Create a database of each service:
-
-```bash
-create database simona_housing_service;
-create database simona_rental_service;
-create database simona_account_service;
-```
-
-## Deployment
-
-Instal Istio. See: https://istio.io/latest/docs/setup/install/istioctl/
-
-Run the following commands:
-
-```bash
-# Create pods
 ./init.sh
+```
 
-# Run the API
+Check the status of created pods:
+
+```bash
+kubectl get pod
+# Output
+NAME                               READY   STATUS    RESTARTS   AGE
+auth-service-54d8dcd88d-8vqsk      2/2     Running   0          2m2s
+db-86b97cb8c6-pnc5r                2/2     Running   0          2m2s
+housing-service-7665f55df6-5xjp9   2/2     Running   0          2m2s
+loki-0                             2/2     Running   0          4m6s
+rental-service-68459b465b-svmvf    2/2     Running   0          2m2s
+```
+
+The initialization of the db may take time because of the execution of the SQL file.
+
+Run the API:
+
+```
 ./run.sh
 ```
 
-## Reset
+Run monotoring services
+
+```
+./kiali.sh
+./grafana.sh
+```
+
+You can check out the following services in their corresponding URL:
+
+| Service | Url             |
+| ------- | --------------- |
+| Kiali   | localhost:20001 |
+| Grafana | localhost:3000  |
+
+> ⚠️ Kiali must be running before running Grafana.
+
+## Update the docker image
+
+If you made changes to any services. You can build the new Docker image and push it to `antoinedespres/simona-auth-service` Docker registry:
+
+```bash
+docker buildx build --platform linux/amd64 -t antoinedespres/simona-auth-service --push .
+docker buildx build --platform linux/amd64 -t antoinedespres/simona-housing-service --push .
+docker buildx build --platform linux/amd64 -t antoinedespres/simona-rental-service --push .
+```
+
+## Clean
+
+If you need to delete all Kubernetes components, the simplest way is to reset Minikube:
 
 ```bash
 minikube delete
+minikube start --cpus=2 --memory=5000 --driver=docker
 ```
 
-type `\l` to show the list of created databases.
+To make sure that Minikube has been reset, you can check if there is any deployments:
 
-## Resources
+```bash
+kubectl get deploy
+```
 
-(Microservices Security Using JWT - Spring Cloud Gateway - JavaTechie)[https://www.youtube.com/watch?v=MWvnmyLRUik]
+You also need to reinstall `Istio`:
+
+```bash
+istioctl install --set profile=demo -y
+kubectl label namespace default istio-injection=enabled
+kubectl apply -f samples/addons
+```
 
 ## Todo
 
