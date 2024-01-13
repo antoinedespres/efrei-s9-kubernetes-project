@@ -1,11 +1,11 @@
-package com.simona.housing.web.controller;
+package com.groscaillou.housing.web.controller;
 
-import com.simona.housing.client.RentalClient;
-import com.simona.housing.dto.HousingDto;
-import com.simona.housing.dto.RentalDto;
-import com.simona.housing.dto.ApiResponse;
-import com.simona.housing.model.Housing;
-import com.simona.housing.web.repository.HousingRepository;
+import com.groscaillou.housing.client.RentalClient;
+import com.groscaillou.housing.dto.HousingDto;
+import com.groscaillou.housing.dto.RentalDto;
+import com.groscaillou.housing.dto.ApiResponse;
+import com.groscaillou.housing.model.Housing;
+import com.groscaillou.housing.web.repository.HousingRepository;
 import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

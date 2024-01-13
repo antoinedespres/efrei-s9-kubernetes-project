@@ -1,6 +1,6 @@
-package com.simona.rental.web.repository;
+package com.groscaillou.rental.web.repository;
 
-import com.simona.rental.model.Rental;
+import com.groscaillou.rental.model.Rental;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.simona.auth.util;
+package com.groscaillou.auth.util;
 
 import java.security.Key;
 import java.security.SignatureException;

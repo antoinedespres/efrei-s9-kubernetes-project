@@ -1,4 +1,4 @@
-package com.simona.housing.dto;
+package com.groscaillou.housing.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

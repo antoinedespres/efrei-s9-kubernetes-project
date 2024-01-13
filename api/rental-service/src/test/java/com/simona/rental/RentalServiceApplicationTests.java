@@ -1,4 +1,4 @@
-package com.simona.rental;
+package com.groscaillou.rental;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,12 +1,12 @@
 CREATE USER docker;
-CREATE DATABASE simona_account_service;
-GRANT ALL PRIVILEGES ON DATABASE simona_account_service TO docker;
-CREATE DATABASE simona_housing_service;
-GRANT ALL PRIVILEGES ON DATABASE simona_housing_service TO docker;
-CREATE DATABASE simona_rental_service;
-GRANT ALL PRIVILEGES ON DATABASE simona_rental_service TO docker;
+CREATE DATABASE groscaillou_account_service;
+GRANT ALL PRIVILEGES ON DATABASE groscaillou_account_service TO docker;
+CREATE DATABASE groscaillou_housing_service;
+GRANT ALL PRIVILEGES ON DATABASE groscaillou_housing_service TO docker;
+CREATE DATABASE groscaillou_rental_service;
+GRANT ALL PRIVILEGES ON DATABASE groscaillou_rental_service TO docker;
 
-\c simona_account_service
+\c groscaillou_account_service
 
 CREATE TABLE IF NOT EXISTS role(
 	id SERIAL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS account(
 	FOREIGN KEY(role_id) REFERENCES role(id)
 );
 
-\c simona_housing_service
+\c groscaillou_housing_service
 
 CREATE TABLE housing_type(
 	id SERIAL,
@@ -55,7 +55,7 @@ CREATE TABLE housing(
 
 INSERT INTO Housing (surface, nb_rooms, street, postal_code, city, price, landlord_id, type_id) VALUES (60, 2, '9 rue du Chat qui Pêche', '75005', 'Paris', 350000.50, 1, 1);
 
-\c simona_rental_service
+\c groscaillou_rental_service
 
 CREATE TABLE rental(
 	id SERIAL,

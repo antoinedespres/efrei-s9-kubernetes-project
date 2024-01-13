@@ -1,9 +1,9 @@
-package com.simona.auth.web.controller;
+package com.groscaillou.auth.web.controller;
 
-import com.simona.auth.dto.AuthResponse;
-import com.simona.auth.model.Account;
-import com.simona.auth.dto.AuthRequest;
-import com.simona.auth.service.AuthService;
+import com.groscaillou.auth.dto.AuthResponse;
+import com.groscaillou.auth.model.Account;
+import com.groscaillou.auth.dto.AuthRequest;
+import com.groscaillou.auth.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

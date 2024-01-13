@@ -1,4 +1,4 @@
-package com.simona.housing;
+package com.groscaillou.housing;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JavaType;

@@ -1,4 +1,4 @@
-package com.simona.auth;
+package com.groscaillou.auth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

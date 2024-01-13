@@ -1,4 +1,4 @@
-package com.simona.rental.dto;
+package com.groscaillou.rental.dto;
 
 public class ApiResponse<T> {
     private T data;

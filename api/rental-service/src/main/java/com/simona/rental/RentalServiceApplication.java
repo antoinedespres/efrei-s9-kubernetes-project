@@ -1,4 +1,4 @@
-package com.simona.rental;
+package com.groscaillou.rental;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;

@@ -13,12 +13,12 @@ spec:
     spec:
       containers:
         - name: auth-service
-          image: antoinedespres/simona-auth-service
+          image: antoinedespres/groscaillou-auth-service
           ports:
             - containerPort: 8081
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://db:5432/simona_account_service
+              value: jdbc:postgresql://db:5432/groscaillou_account_service
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: none
 ---
@@ -37,12 +37,12 @@ spec:
     spec:
       containers:
         - name: housing-service
-          image: antoinedespres/simona-housing-service
+          image: antoinedespres/groscaillou-housing-service
           ports:
             - containerPort: 8082
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://db:5432/simona_housing_service
+              value: jdbc:postgresql://db:5432/groscaillou_housing_service
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: none
             - name: RENTAL_SERVICE_BASE_URL
@@ -63,14 +63,14 @@ spec:
     spec:
       containers:
         - name: rental-service
-          image: antoinedespres/simona-rental-service
+          image: antoinedespres/groscaillou-rental-service
           ports:
             - containerPort: 8083
           env:
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: http://service-registry:8761/eureka/
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://db:5432/simona_rental_service
+              value: jdbc:postgresql://db:5432/groscaillou_rental_service
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: none
 ---

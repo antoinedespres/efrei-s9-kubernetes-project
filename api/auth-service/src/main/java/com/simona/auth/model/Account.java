@@ -1,4 +1,4 @@
-package com.simona.auth.model;
+package com.groscaillou.auth.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

@@ -1,4 +1,4 @@
-package com.simona.rental.config;
+package com.groscaillou.rental.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

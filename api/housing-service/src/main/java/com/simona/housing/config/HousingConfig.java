@@ -1,4 +1,4 @@
-package com.simona.housing.config;
+package com.groscaillou.housing.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

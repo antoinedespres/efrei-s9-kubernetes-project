@@ -1,9 +1,9 @@
-package com.simona.rental.web.controller;
+package com.groscaillou.rental.web.controller;
 
-import com.simona.rental.dto.ApiResponse;
-import com.simona.rental.dto.RentalDto;
-import com.simona.rental.model.Rental;
-import com.simona.rental.web.repository.RentalRepository;
+import com.groscaillou.rental.dto.ApiResponse;
+import com.groscaillou.rental.dto.RentalDto;
+import com.groscaillou.rental.model.Rental;
+import com.groscaillou.rental.web.repository.RentalRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

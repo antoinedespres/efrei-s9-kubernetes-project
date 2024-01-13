@@ -1,4 +1,4 @@
-package com.simona.housing.model;
+package com.groscaillou.housing.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

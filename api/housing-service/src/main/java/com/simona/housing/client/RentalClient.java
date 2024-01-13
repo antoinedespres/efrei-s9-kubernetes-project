@@ -1,7 +1,7 @@
-package com.simona.housing.client;
+package com.groscaillou.housing.client;
 
-import com.simona.housing.dto.ApiResponse;
-import com.simona.housing.dto.RentalDto;
+import com.groscaillou.housing.dto.ApiResponse;
+import com.groscaillou.housing.dto.RentalDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

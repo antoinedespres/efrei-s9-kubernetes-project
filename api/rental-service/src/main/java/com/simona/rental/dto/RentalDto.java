@@ -1,6 +1,6 @@
-package com.simona.rental.dto;
+package com.groscaillou.rental.dto;
 
-import com.simona.rental.model.Rental;
+import com.groscaillou.rental.model.Rental;
 
 import java.time.LocalDate;
 

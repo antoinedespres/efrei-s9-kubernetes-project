@@ -1,8 +1,8 @@
-package com.simona.auth.service;
+package com.groscaillou.auth.service;
 
-import com.simona.auth.model.Account;
-import com.simona.auth.util.JwtUtil;
-import com.simona.auth.web.repository.AccountRepository;
+import com.groscaillou.auth.model.Account;
+import com.groscaillou.auth.util.JwtUtil;
+import com.groscaillou.auth.web.repository.AccountRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

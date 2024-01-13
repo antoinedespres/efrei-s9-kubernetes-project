@@ -1,6 +1,6 @@
-package com.simona.housing.config;
+package com.groscaillou.housing.config;
 
-import com.simona.housing.client.FeignResultDecoder;
+import com.groscaillou.housing.client.FeignResultDecoder;
 import feign.codec.Decoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

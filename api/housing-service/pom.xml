@@ -8,7 +8,7 @@
 		<version>2.7.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.simonaimmobilier.housing</groupId>
+	<groupId>com.groscaillou.housing</groupId>
 	<artifactId>housing-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>housing-service</name>

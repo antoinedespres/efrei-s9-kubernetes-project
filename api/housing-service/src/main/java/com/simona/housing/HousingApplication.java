@@ -1,4 +1,4 @@
-package com.simona.housing;
+package com.groscaillou.housing;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;

@@ -1,4 +1,4 @@
-package com.simona.housing;
+package com.groscaillou.housing;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

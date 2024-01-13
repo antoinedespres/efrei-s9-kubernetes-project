@@ -1,6 +1,6 @@
-package com.simona.auth.config;
+package com.groscaillou.auth.config;
 
-import com.simona.auth.model.Account;
+import com.groscaillou.auth.model.Account;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

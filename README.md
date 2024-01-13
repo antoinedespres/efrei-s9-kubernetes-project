@@ -1,8 +1,8 @@
-# Simona Immobilier
+# Gros-Caillou Immobilier
 
 ## Overview
 
-Housing API based on the microservice architecture.
+Housing API based on the microservice architecture. The name of this project comes from a neighborhood in the 7th arrondissement of Paris.
 
 ## Requirements
 
@@ -76,9 +76,9 @@ You can check out the following services in their corresponding URL:
 If you made changes to any services. You can build the new Docker image and push it to `antoinedespres/xxx-service` Docker registry:
 
 ```bash
-docker build -t antoinedespres/simona-auth-service --push .
-docker build -t antoinedespres/simona-housing-service --push .
-docker build -t antoinedespres/simona-rental-service --push .
+docker build -t antoinedespres/groscaillou-auth-service --push .
+docker build -t antoinedespres/groscaillou-housing-service --push .
+docker build -t antoinedespres/groscaillou-rental-service --push .
 ```
 
 ## Clean

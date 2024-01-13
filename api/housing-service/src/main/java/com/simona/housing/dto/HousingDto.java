@@ -1,8 +1,8 @@
-package com.simona.housing.dto;
+package com.groscaillou.housing.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.simona.housing.model.Housing;
+import com.groscaillou.housing.model.Housing;
 
 import java.util.List;
 

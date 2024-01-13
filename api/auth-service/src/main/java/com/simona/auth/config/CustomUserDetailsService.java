@@ -1,7 +1,7 @@
-package com.simona.auth.config;
+package com.groscaillou.auth.config;
 
-import com.simona.auth.model.Account;
-import com.simona.auth.web.repository.AccountRepository;
+import com.groscaillou.auth.model.Account;
+import com.groscaillou.auth.web.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

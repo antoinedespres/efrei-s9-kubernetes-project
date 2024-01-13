@@ -1,4 +1,4 @@
-package com.simona.rental.model;
+package com.groscaillou.rental.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

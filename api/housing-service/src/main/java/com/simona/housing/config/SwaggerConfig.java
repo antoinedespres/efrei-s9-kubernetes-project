@@ -1,4 +1,4 @@
-package com.simona.housing.config;
+package com.groscaillou.housing.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

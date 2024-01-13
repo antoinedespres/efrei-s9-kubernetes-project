@@ -1,6 +1,6 @@
-package com.simona.auth.web.repository;
+package com.groscaillou.auth.web.repository;
 
-import com.simona.auth.model.Account;
+import com.groscaillou.auth.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

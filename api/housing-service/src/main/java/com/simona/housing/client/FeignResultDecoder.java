@@ -1,7 +1,7 @@
-package com.simona.housing.client;
+package com.groscaillou.housing.client;
 
-import com.simona.housing.JsonUtil;
-import com.simona.housing.dto.ApiResponse;
+import com.groscaillou.housing.JsonUtil;
+import com.groscaillou.housing.dto.ApiResponse;
 import feign.FeignException;
 import feign.Response;
 import feign.Util;

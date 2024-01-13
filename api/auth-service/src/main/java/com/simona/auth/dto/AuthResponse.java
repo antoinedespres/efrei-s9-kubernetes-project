@@ -1,4 +1,4 @@
-package com.simona.auth.dto;
+package com.groscaillou.auth.dto;
 
 public class AuthResponse {
     private String lastName;
