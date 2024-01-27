@@ -23,13 +23,10 @@ jobs:
             git pull origin main
             cd ${{ github.repository }}"
 
-            # Start Minikube
             minikube start
 
-            # Install Istio (you need to specify the installation steps here)
             istioctl install --set profile=demo -y
 
-            # Apply Kubernetes manifests
             kubectl apply -f .
 
             ./init.sh
