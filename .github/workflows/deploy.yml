@@ -21,8 +21,8 @@ jobs:
           password: ${{ secrets.VPS_PASSWORD }}
           port: ${{ secrets.VPS_PORT }}
           script: |
-            git pull origin main
-            cd ${{ github.repository }}"
+            git pull origin master
+            cd efrei-s9-kubernetes-project
 
             minikube start
 
