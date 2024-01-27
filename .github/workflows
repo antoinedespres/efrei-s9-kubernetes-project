@@ -1,0 +1,37 @@
+name: Deploy to Antoine's VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Connect to VPS using SSH and starts the project
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          script: |
+            git pull origin main
+            cd ${{ github.repository }}"
+
+            # Start Minikube
+            minikube start
+
+            # Install Istio (you need to specify the installation steps here)
+            istioctl install --set profile=demo -y
+
+            # Apply Kubernetes manifests
+            kubectl apply -f .
+
+            ./init.sh
+
+            ./run.sh
