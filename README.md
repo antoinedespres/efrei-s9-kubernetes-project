@@ -20,7 +20,7 @@ You need to install:
 
 - `Istio` to handle ingress gateway. More details at https://istio.io/latest/docs/setup/getting-started/
 
-You also need to install the Istio addons (Kiali, Prometheus, Jaeger, Grafana):
+You also need to install the Istio addons (Kiali, Prometheus, Jaeger, Grafana) by running this command from the istio directory:
 
 ```
 kubectl apply -f samples/addons
