@@ -51,7 +51,7 @@ public class HousingController {
 
     // Ignore the authorization header
     public ResponseEntity<ApiResponse<HousingDto>> findById(@PathVariable Long id,
-                                                           @Parameter(hidden = true) @RequestHeader(value = HttpHeaders.AUTHORIZATION, required = false) String authorization) {
+                                                           @Parameter(hidden = true) @RequestHeader(value = HttpHeaders.AUTHORIZATION, required = true) String authorization) {
         if (id == null || id <= 0)
             return ResponseEntity.badRequest().body(new ApiResponse<>(null, "Id is required"));
 
