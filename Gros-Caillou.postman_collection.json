@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "51fa8f29-c197-4e82-b270-2e88dcbabc2a",
+		"name": "Gros-Caillou",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26432455",
+		"_collection_link": "https://groscaillou.postman.co/workspace/Team-Workspace~ecfb1b40-02cf-4668-8b6a-3ca61d58077b/collection/26432455-51fa8f29-c197-4e82-b270-2e88dcbabc2a?action=share&source=collection_link&creator=26432455"
+	},
+	"item": [
+		{
+			"name": "Housing",
+			"item": [
+				{
+					"name": "/housings/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port}}/housing/v1/housings",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"housing",
+								"v1",
+								"housings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/housings/{id}/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvaW5lLmRlc3ByZXMrZ3Jvc2NhaWxsb3VAZWZyZWkubmV0IiwiaWF0IjoxNzA2NjkzMTkzLCJleHAiOjE3MDcyOTc5OTN9.VXM8qn_ZoX_iRzesTxAVYj6EMC_LQz9WKTsE7TbeG8ZWatF6AIVmEBYptWYlx7NV",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port}}/housing/v1/housings/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"housing",
+								"v1",
+								"housings",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/housings/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surface\": 434,\r\n    \"nbRooms\": 3,\r\n    \"street\": \"rue de fourvière\",\r\n    \"postalCode\": \"75004\",\r\n    \"city\": \"paris\",\r\n    \"price\": 450000,\r\n    \"landlordId\": 3,\r\n    \"typeId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/housing/v1/housings",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"housing",
+								"v1",
+								"housings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/housings/{id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port}}/housing/v1/housings/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"housing",
+								"v1",
+								"housings",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Rental",
+			"item": [
+				{
+					"name": "/rentals/housing/{id}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port}}/rental/v1/rentals/housing/:id?page=0&size=20&sortBy=id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rental",
+								"v1",
+								"rentals",
+								"housing",
+								":id"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/rentals",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port}}/rental/v1/rentals",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rental",
+								"v1",
+								"rentals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/rentals/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2023-04-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/rental/v1/rentals/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rental",
+								"v1",
+								"rentals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth service",
+			"item": [
+				{
+					"name": "/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"DESPRÉS\",\r\n    \"firstName\": \"Antoine\",\r\n    \"email\": \"antoine.despres+groscaillou@efrei.net\",\r\n    \"password\": \"HelloMisterCharroux!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/auth/v1/register",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"antoine.despres+groscaillou@efrei.net\",\r\n    \"password\": \"HelloMisterCharroux!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/auth/v1/login",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/validate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{port}}/auth/v1/validate?token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvaW5lLmRlc3ByZXMrZ3Jvc2NhaWxsb3VAZWZyZWkubmV0IiwiaWF0IjoxNzA2NjkzMTkzLCJleHAiOjE3MDcyOTc5OTN9.VXM8qn_ZoX_iRzesTxAVYj6EMC_LQz9WKTsE7TbeG8ZWatF6AIVmEBYptWYlx7NV",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"v1",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvaW5lLmRlc3ByZXMrZ3Jvc2NhaWxsb3VAZWZyZWkubmV0IiwiaWF0IjoxNzA2NjkzMTkzLCJleHAiOjE3MDcyOTc5OTN9.VXM8qn_ZoX_iRzesTxAVYj6EMC_LQz9WKTsE7TbeG8ZWatF6AIVmEBYptWYlx7NV"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "31380",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		}
+	]
+}
